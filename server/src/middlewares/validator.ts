@@ -13,7 +13,7 @@ export const validate =
         headers: req.headers,
       };
 
-      __dev__ && console.log(data);
+      __dev__ && logger.log(data);
 
       const res = await schema.parseAsync(data);
       req.query = res.query;

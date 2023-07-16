@@ -1,13 +1,15 @@
 import { PrismaClient } from "@prisma/client";
+import logger from "../utils/logger";
 
 const prisma = new PrismaClient();
 
 prisma.$queryRaw`SELECT 1`
   .then(() => {
-    console.info(`🚀 [prisma]: connected`);
+    logger.info(`🚀 [prisma]: connected`);
   })
   .catch((err) => {
-    console.log(`❌ [prisma]: unable to connect\n`, err);
+    logger.error(`❌ [prisma]: unable to connect\n`);
+    logger.error(err);
   });
 
 export default prisma;
