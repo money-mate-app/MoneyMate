@@ -16,4 +16,3 @@ const envSchema = z.object({
 
 export const __dev__ = process.env.NODE_ENV !== "production";
 export const { DATABASE_URL, PORT, REDIS_URL } = envSchema.parse(process.env);
-

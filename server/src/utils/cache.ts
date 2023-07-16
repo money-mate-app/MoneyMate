@@ -1,4 +1,5 @@
 import { RedisClient } from "../connections";
+import logger from "./logger";
 
 export async function setCache(key: any, value: any, time_in_seconds: number) {
   try {
@@ -27,6 +28,6 @@ export async function deleteCache(key: any) {
     const keyString: string = JSON.stringify(key);
     RedisClient.del(keyString);
   } catch (err: any) {
-    console.error(err);
+    logger.error(err);
   }
 }
