@@ -9,7 +9,6 @@ client/node_modules
 .idea
 .DS_Store
 .env
-.env.sample
 *.log
 debug/
 /.vscode
