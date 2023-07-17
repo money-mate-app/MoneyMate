@@ -8,7 +8,7 @@ const envSchema = z.object({
     required_error: "Database url is required",
   }),
 
-  PORT: z.number().optional().default(5000),
+  PORT: z.string().optional().default("5000"),
   REDIS_URL: z.string({
     required_error: "Redis url is required",
   }),
