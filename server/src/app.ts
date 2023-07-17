@@ -1,1 +1,3 @@
-import "./connections"
+import "./connections";
+import "./middlewares";
+import "./routes";

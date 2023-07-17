@@ -1,6 +1,7 @@
 import { NextFunction, Response, Request } from "express";
 import { AnyZodObject } from "zod";
 import { __dev__ } from "../constants";
+import logger from "../utils/logger";
 
 export const validate =
   (schema: AnyZodObject) =>
@@ -13,7 +14,7 @@ export const validate =
         headers: req.headers,
       };
 
-      __dev__ && logger.log(data);
+      logger.debug(data);
 
       const res = await schema.parseAsync(data);
       req.query = res.query;

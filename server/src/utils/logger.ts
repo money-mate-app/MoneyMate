@@ -31,7 +31,7 @@ const options = {
     }),
     new transports.File({
       filename: "./src/logs/debug.log",
-      level: "debug",
+      level: __dev__ ? "debug" : "error",
       format: format.combine(format.prettyPrint()),
     }),
   ],
