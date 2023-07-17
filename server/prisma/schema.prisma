@@ -24,7 +24,8 @@ model User {
 model AuthToken {
   user_id       String @id
   user          User   @relation(fields: [user_id], references: [id], onDelete: Cascade)
-  refresh_token String
+  refresh_token String @unique
+  auth_token    String @unique
 
   @@index([user_id])
 }

@@ -6,7 +6,7 @@ export async function setCache(key: any, value: any, time_in_seconds: number) {
     const keyString: string = JSON.stringify(key);
     await RedisClient.setex(keyString, time_in_seconds, JSON.stringify(value));
   } catch (err: any) {
-    console.error(err);
+    logger.error(err);
   }
 }
 
@@ -18,7 +18,7 @@ export async function getCache(key: any) {
     cache = JSON.parse(cache);
     return cache;
   } catch (err: any) {
-    console.error(err);
+    logger.error(err);
     return null;
   }
 }
