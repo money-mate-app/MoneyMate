@@ -10,10 +10,7 @@ const { AuthRoutes } = lazyImport(
 const App = () => {
   return (
     <Providers>
-      {/* <AuthRoutes /> */}
-      <Routes>
-        <Route path="/auth" element={<Auth />} />
-      </Routes>
+      <AuthRoutes />
     </Providers>
   );
 };
