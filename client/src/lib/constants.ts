@@ -24,3 +24,4 @@ export const {
   VITE_MICROSOFT_CLIENT_ID,
   VITE_SERVER_URL,
 } = envSchema.parse(import.meta.env);
+export const __DEV__ = import.meta.env.DEV;

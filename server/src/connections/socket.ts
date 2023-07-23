@@ -9,7 +9,6 @@ const io = new Server(server, {
 });
 
 io.on("connection", async (socket) => {
-  logger.info("[socket]: socket running");
   const userId = socket.handshake.headers.user_id ?? socket.id;
   if (!userId) return;
   logger.info(`[socket]: ${userId} joined to socket`);

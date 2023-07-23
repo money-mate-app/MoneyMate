@@ -33,6 +33,9 @@ const options = {
       filename: "./src/logs/debug.log",
       level: __dev__ ? "debug" : "error",
       format: format.combine(format.prettyPrint()),
+      maxsize: 10000000,
+      maxFiles: 10,
+      zippedArchive: false,
     }),
   ],
 };
