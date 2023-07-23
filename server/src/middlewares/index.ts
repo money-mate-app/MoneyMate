@@ -13,7 +13,11 @@ function shouldCompress(req: Request, res: Response) {
   return compression.filter(req, res);
 }
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(express.json({ limit: "50mb" }));
 app.use(
   compression({
